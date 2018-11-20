@@ -2,12 +2,15 @@
 -- 1
 CREATE VIEW suppliers_product_vw
 AS
+/*select the columns*/
 SELECT	Products.ProductID,
 		Products.QuantityPerUnit,
 		Products.UnitsInStock,
 		Products.UnitsOnOrder,
 		Suppliers.Name
+/*create the inner join*/
 FROM Products INNER JOIN Suppliers ON Products.SupplierID = Suppliers.SupplierID
+/*restrict result set*/
 WHERE Products.UnitsOnOrder > 0
 
 
